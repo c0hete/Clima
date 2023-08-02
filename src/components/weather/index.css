@@ -1,0 +1,24 @@
+.current-weather-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .weather-icon {
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: auto;
+    margin: 5px;
+  }
+  
+  .weather-details {
+    font-size: 18px; /* Ajusta el tamaño de fuente según tus necesidades */
+    font-weight: bold;
+  }
+  
+  .weather-description {
+    color: #555; /* Ajusta el color según tus preferencias */
+  }
+  

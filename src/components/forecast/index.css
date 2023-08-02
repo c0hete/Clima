@@ -1,0 +1,28 @@
+.forecast-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #999 #eee;
+}
+
+.forecast-card {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 15px;
+  margin: 10px;
+  background: #f3f3f3;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+}
+
+.forecast-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.forecast-card h3 {
+  font-size: 14px;
+}

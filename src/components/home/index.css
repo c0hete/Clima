@@ -1,0 +1,16 @@
+.home-container {
+    width: 100%;
+    max-width: 800px; /* Puedes ajustar este valor según tu preferencia */
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 20px; /* Espaciado alrededor del contenido */
+  }
+  
+  /* Si quieres centrar el contenido verticalmente también, puedes añadir estos estilos */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Altura mínima de la ventana del navegador */
+  }
+  
