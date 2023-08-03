@@ -3,6 +3,11 @@ import Search from '../search';
 import axios from 'axios';
 import moment from 'moment';
 import './index.css';
+import 'moment/locale/es';
+
+function capitalizeFirstLetters(str) {
+  return str.replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
 function Forecast({ city, onSearch }) {
   const [forecast, setForecast] = useState([]);
@@ -16,7 +21,8 @@ function Forecast({ city, onSearch }) {
         .then((response) => {
           const forecastData = response.data.list.map(item => ({
             ...item,
-            iconUrl: `https://openweathermap.org/img/w/${item.weather[0].icon}.png` // Cambiado a HTTPS
+            iconUrl: `https://openweathermap.org/img/w/${item.weather[0].icon}.png`,
+            description: capitalizeFirstLetters(item.weather[0].description) // Capitalized description
           }));
           setForecast(forecastData);
         })
@@ -44,10 +50,10 @@ function Forecast({ city, onSearch }) {
       <div className="forecast-container" ref={forecastRef}>
         {forecast.map((day) => (
           <div key={day.dt_txt} className="forecast-card">
-            <h3>{moment(day.dt_txt).format('dddd, D [de] MMMM [de] YYYY, H:mm')}</h3>
+            <h3>{capitalizeFirstLetters(moment(day.dt_txt).format('dddd, D [de] MMMM [de] YYYY, H:mm'))}</h3> {/* Capitalized date */}
             <img src={day.iconUrl} alt="" />
             <p>{day.main.temp}°C</p>
-            <p>{day.weather[0].description}</p>
+            <p>{day.description}</p> {/* Already capitalized */}
           </div>
         ))}
       </div>

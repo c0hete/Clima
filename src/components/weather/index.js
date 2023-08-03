@@ -3,6 +3,7 @@ import axios from 'axios';
 import Details from '../details';
 import Error from '../error';
 import './index.css';
+import { capitalizeFirstLetters } from '../../functions/capitalizeFirstLetters';
 
 function CurrentWeather({ city }) {
   const [weather, setWeather] = useState({});
@@ -18,14 +19,27 @@ function CurrentWeather({ city }) {
           const iconCode = response.data.weather[0].icon;
           const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
 
+          const currentDate = new Date();
+          const formattedDate = currentDate.toLocaleDateString("es-ES", {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+
+          const capitalizedDate = capitalizeFirstLetters(formattedDate); // Aplicamos la función aquí
+
           setWeather({
             location: response.data.name,
             temperature: response.data.main.temp,
-            description: response.data.weather[0].description,
+            description: capitalizeFirstLetters(response.data.weather[0].description), // También aquí
             humidity: response.data.main.humidity,
             pressure: response.data.main.pressure,
             windSpeed: response.data.wind.speed,
-            iconUrl: iconUrl
+            iconUrl: iconUrl,
+            date: capitalizedDate // Fecha capitalizada
           });
         })
         .catch((error) => {
@@ -39,14 +53,15 @@ function CurrentWeather({ city }) {
       {error ? <Error message={error} /> : (
         <>
           <h1>{weather.location}</h1>
+          <p className="weather-date">{weather.date}</p> {/* La fecha ya está en mayúsculas */}
           <img src={weather.iconUrl} alt="" className="weather-icon" />
           <p className="weather-details">{weather.temperature}°C</p>
-          <p className="weather-description">{weather.description}</p>
+          <p className="weather-description">{weather.description}</p> {/* La descripción también */}
           <Details 
-  humidity={weather.humidity}
-  pressure={weather.pressure}
-  windSpeed={weather.windSpeed}
-/>
+            humidity={weather.humidity}
+            pressure={weather.pressure}
+            windSpeed={weather.windSpeed}
+          />
         </>
       )}
     </div>

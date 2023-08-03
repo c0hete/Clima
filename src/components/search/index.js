@@ -11,7 +11,7 @@ function Search({ onSearch }) {
   return (
     <div className="search-container">
       <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch}>Buscar</button>
     </div>
   );
 }
