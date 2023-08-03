@@ -14,3 +14,22 @@
     min-height: 100vh; /* Altura mínima de la ventana del navegador */
   }
   
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-container input {
+    /* Puedes ajustar estos valores según tus preferencias */
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .search-container button {
+    /* Puedes ajustar estos valores según tus preferencias */
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  

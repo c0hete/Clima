@@ -10,7 +10,7 @@
   .weather-icon {
     width: 100px; /* Ajusta el tamaño según tus necesidades */
     height: auto;
-    margin: 5px;
+    margin: 10px;
   }
   
   .weather-details {

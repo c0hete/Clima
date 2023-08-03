@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CurrentWeather from '../weather';
 import Forecast from '../forecast';
-import Search from '../search';
 import axios from 'axios';
 
 function Home() {
@@ -26,10 +25,9 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <Search onSearch={setCity} />
+    <div className="home-container">
       <CurrentWeather city={city} />
-      <Forecast city={city} />
+      <Forecast city={city} onSearch={setCity} />
     </div>
   );
 }

@@ -1,3 +1,36 @@
+.forecast-wrapper {
+  position: relative;
+}
+
+.forecast-arrows {
+  display: flex;
+  justify-content: space-between; /* Esto separa los elementos */
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin-top: -89px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.forecast-arrow {
+  background: none;
+  border: none;
+  font-size: 80px; /* Ajusta según el tamaño deseado */
+  color: #fd7e31; /* Color de las flechas */
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s;
+  margin-top: 0px;
+  padding-bottom: 15px;
+}
+
+.forecast-arrow:hover {
+  color: #b69f1d; /* Color de las flechas al pasar el ratón */
+}
+
 .forecast-container {
   display: flex;
   overflow-x: auto;
@@ -5,6 +38,19 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #999 #eee;
+  margin-top: 4%;
+  margin-left: 80px;
+  margin-right: 80px;
+  scrollbar-width: thin;
+  scrollbar-color: #fd7e31 #022c43; /* color para Firefox */
+}
+
+.forecast-container::-webkit-scrollbar {
+  width: 20px; /* ancho para Chrome, Safari y Opera */
+}
+
+.forecast-container::-webkit-scrollbar-thumb {
+  background-color: #fd7e31; /* color del pulgar en Chrome, Safari y Opera */
 }
 
 .forecast-card {

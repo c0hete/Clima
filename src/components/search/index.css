@@ -1,0 +1,22 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    margin: 0 auto; /* Esto centrará el contenedor horizontalmente */
+    margin-top: 10px;
+    padding-bottom: 0px;
+  }
+  
+  .search-container input {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+    flex: 1;
+  }
+  
+  .search-container button {
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  

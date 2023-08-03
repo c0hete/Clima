@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react'; // Importa useRef
+import React, { useState, useEffect, useRef } from 'react';
+import Search from '../search';
 import axios from 'axios';
 import moment from 'moment';
-import 'moment/locale/es';
 import './index.css';
 
-function Forecast({ city }) {
+function Forecast({ city, onSearch }) {
   const [forecast, setForecast] = useState([]);
-  const forecastRef = useRef(null); // Referencia para el contenedor del carrusel
+  const forecastRef = useRef(null);
 
   useEffect(() => {
     moment.locale('es');
@@ -27,16 +27,20 @@ function Forecast({ city }) {
   }, [city]);
 
   const scrollLeft = () => {
-    forecastRef.current.scrollLeft -= 200; // Ajusta según el tamaño de tus tarjetas
+    forecastRef.current.scrollLeft -= 200;
   };
 
   const scrollRight = () => {
-    forecastRef.current.scrollLeft += 200; // Ajusta según el tamaño de tus tarjetas
+    forecastRef.current.scrollLeft += 200;
   };
 
   return (
-    <div>
-      <button onClick={scrollLeft}>←</button>
+    <div className="forecast-wrapper">
+      <div className="forecast-arrows">
+        <button className="forecast-arrow" onClick={scrollLeft}>←</button>
+        <Search onSearch={onSearch} />
+        <button className="forecast-arrow" onClick={scrollRight}>→</button>
+      </div>
       <div className="forecast-container" ref={forecastRef}>
         {forecast.map((day) => (
           <div key={day.dt_txt} className="forecast-card">
@@ -47,7 +51,6 @@ function Forecast({ city }) {
           </div>
         ))}
       </div>
-      <button onClick={scrollRight}>→</button>
     </div>
   );
 }
