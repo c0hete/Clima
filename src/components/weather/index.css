@@ -5,12 +5,16 @@
     border-radius: 10px;
     margin: 20px;
     background-color: #f9f9f9;
+    color: #fd7e31;
+    font-size: 17px;
+    font-weight: 900;
+    -webkit-text-stroke: 0.5px black;
   }
   
   .weather-icon {
-    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    width: 50px; /* Ajusta el tamaño según tus necesidades */
     height: auto;
-    margin: 10px;
+    margin: -25px;
   }
   
   .weather-details {
@@ -20,5 +24,95 @@
   
   .weather-description {
     color: #555; /* Ajusta el color según tus preferencias */
+  }
+  
+  .current-weather-container.thunderstorm {
+    background-image: url('../../assets/images/Thunderstorm.jpeg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.drizzle {
+    background-image: url('../../assets/images/Drizzle.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.rain {
+    background-image: url('../../assets/images/Rain.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.snow {
+    background-image: url('../../assets/images/Snow.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.mist {
+    background-image: url('../../assets/images/Mist.webp');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.smoke {
+    background-image: url('../../assets/images/Smoke.avif');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.haze {
+    background-image: url('../../assets/images/Haze.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.dust {
+    background-image: url('../../assets/images/Dust.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.fog {
+    background-image: url('../../assets/images/Fog.jpeg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.sand {
+    background-image: url('../../assets/images/Sand.webp');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.ash {
+    background-image: url('../../assets/images/ash.jpeg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.squall {
+    background-image: url('../../assets/images/squall.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.tornado {
+    background-image: url('../../assets/images/tornado.webp');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.clear {
+    background-image: url('../../assets/images/clear.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  }
+  
+  .current-weather-container.clouds {
+    background-image: url('../../assets/images/clouds.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
   }
   

@@ -16,11 +16,62 @@ function CurrentWeather({ city }) {
 
       axios.get(url)
         .then((response) => {
-          const iconCode = response.data.weather[0].icon;
-          const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
+          let weatherClass = '';
+          switch (response.data.weather[0].main) {
+  case 'Thunderstorm':
+    weatherClass = 'thunderstorm';
+    break;
+  case 'Drizzle':
+    weatherClass = 'drizzle';
+    break;
+  case 'Rain':
+    weatherClass = 'rain';
+    break;
+  case 'Snow':
+    weatherClass = 'snow';
+    break;
+  case 'Mist':
+    weatherClass = 'mist';
+    break;
+  case 'Smoke':
+    weatherClass = 'smoke';
+    break;
+  case 'Haze':
+    weatherClass = 'haze';
+    break;
+  case 'Dust':
+    weatherClass = 'dust';
+    break;
+  case 'Fog':
+    weatherClass = 'fog';
+    break;
+  case 'Sand':
+    weatherClass = 'sand';
+    break;
+  case 'Dust':
+    weatherClass = 'dust';
+    break;
+  case 'Ash':
+    weatherClass = 'ash';
+    break;
+  case 'Squall':
+    weatherClass = 'squall';
+    break;
+  case 'Tornado':
+    weatherClass = 'tornado';
+    break;
+  case 'Clear':
+    weatherClass = 'clear';
+    break;
+  case 'Clouds':
+    weatherClass = 'clouds';
+    break;
+}
+const iconCode = response.data.weather[0].icon;
+const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
 
-          const currentDate = new Date();
-          const formattedDate = currentDate.toLocaleDateString("es-ES", {
+const currentDate = new Date();
+const formattedDate = currentDate.toLocaleDateString("es-ES", {
             weekday: 'long',
             year: 'numeric',
             month: 'long',
@@ -39,7 +90,8 @@ function CurrentWeather({ city }) {
             pressure: response.data.main.pressure,
             windSpeed: response.data.wind.speed,
             iconUrl: iconUrl,
-            date: capitalizedDate // Fecha capitalizada
+            date: capitalizedDate, // Fecha capitalizada
+            weatherClass: weatherClass // Agrega esta línea
           });
         })
         .catch((error) => {
@@ -48,11 +100,11 @@ function CurrentWeather({ city }) {
     }
   }, [city]);
 
-  return (
-    <div className="current-weather-container">
-      {error ? <Error message={error} /> : (
-        <>
-          <h1>{weather.location}</h1>
+    return (
+      <div className={`current-weather-container ${weather.weatherClass}`}> {/* Agrega weatherClass aquí */}
+        {error ? <Error message={error} /> : (
+          <>
+            <h1>{weather.location}</h1>
           <p className="weather-date">{weather.date}</p> {/* La fecha ya está en mayúsculas */}
           <img src={weather.iconUrl} alt="" className="weather-icon" />
           <p className="weather-details">{weather.temperature}°C</p>
