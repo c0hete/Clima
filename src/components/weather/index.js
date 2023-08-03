@@ -11,12 +11,12 @@ function CurrentWeather({ city }) {
   useEffect(() => {
     if (city) {
       const apiKey = 'bd9dc44134d81a9ff53c6b13a921e023';
-      const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
 
       axios.get(url)
         .then((response) => {
           const iconCode = response.data.weather[0].icon;
-          const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
+          const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
 
           setWeather({
             location: response.data.name,

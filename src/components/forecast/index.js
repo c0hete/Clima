@@ -16,7 +16,7 @@ function Forecast({ city, onSearch }) {
         .then((response) => {
           const forecastData = response.data.list.map(item => ({
             ...item,
-            iconUrl: `http://openweathermap.org/img/w/${item.weather[0].icon}.png`
+            iconUrl: `https://openweathermap.org/img/w/${item.weather[0].icon}.png` // Cambiado a HTTPS
           }));
           setForecast(forecastData);
         })
