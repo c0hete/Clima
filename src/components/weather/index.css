@@ -1,134 +1,124 @@
+/* Actual Weather Styles */
 .current-weather-container {
-    text-align: center;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Slight white background for contrast */
+    text-align: center; /* Centers the text items */
+    width: 100%; /* Adjust this as needed */
+    max-width: 450px;
+    margin: 20px auto; /* Horizontally centers the container if it doesn't take full width */
+}
 
-    font-size: 17px;
-    font-weight: 900;
-    -webkit-text-stroke: 0.5px rgb(13, 13, 13);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff; 
-    padding: 5px; 
-    border-radius: 5px; 
-  }
-  
-  .weather-icon {
-    width: 50px; /* Ajusta el tamaño según tus necesidades */
-    height: auto;
-    margin: -25px;
-  }
-  
-  .weather-details {
-    font-size: 18px; /* Ajusta el tamaño de fuente según tus necesidades */
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fbaa07; 
-    padding: 5px; 
-    border-radius: 5px; 
-  }
-  .weather-description {
-    background: rgba(229, 117, 5, 0.5); 
-    color: #fff !important;
-    padding: 5px; 
-    border-radius: 5px; 
-    display: inline-block; 
-    text-shadow: 2px 2px 4px #101010; 
-  }
-  
-  
-  .weather-description {
-    color: #555; /* Ajusta el color según tus preferencias */
-  }
-  
-  .current-weather-container.thunderstorm {
-    background-image: url('../../assets/images/Thunderstorm.jpeg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.drizzle {
-    background-image: url('../../assets/images/Drizzle.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.rain {
-    background-image: url('../../assets/images/Rain.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.snow {
-    background-image: url('../../assets/images/Snow.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.mist {
-    background-image: url('../../assets/images/Mist.webp');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.smoke {
-    background-image: url('../../assets/images/Smoke.avif');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.haze {
-    background-image: url('../../assets/images/Haze.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.dust {
-    background-image: url('../../assets/images/Dust.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.fog {
-    background-image: url('../../assets/images/Fog.jpeg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.sand {
-    background-image: url('../../assets/images/Sand.webp');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.ash {
-    background-image: url('../../assets/images/ash.jpeg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.squall {
-    background-image: url('../../assets/images/squall.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.tornado {
-    background-image: url('../../assets/images/tornado.webp');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.clear {
-    background-image: url('../../assets/images/clear.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
-  .current-weather-container.clouds {
-    background-image: url('../../assets/images/clouds.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
-  }
-  
+/* Adjusting title styles */
+.current-weather-container h1 {
+    font-size: 2.5rem;
+    color: #2a2a2a;
+    margin-bottom: 15px; 
+}
+
+/* Styling for the date */
+.weather-date {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px; 
+}
+
+/* Icon styling */
+.weather-icon {
+    width: 80px;
+    margin: 20px 0; /* Vertical spacing */
+}
+
+/* Temperature styling */
+.weather-details {
+    font-size: 3rem;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+}
+
+/* Weather description */
+.weather-description {
+    font-size: 1.5rem;
+    color: #4a4a4a;
+    margin-bottom: 20px; 
+}
+
+/* Thunderstorm */
+.thunderstorm {
+    background-color: #50556e; /* Dark gray-blue, representing stormy clouds */
+    color: #eaecee; /* Light text color for better contrast on dark backgrounds */
+}
+
+/* Drizzle */
+.drizzle {
+    background-color: #9dbad5; /* Light bluish-gray, for light rain */
+}
+
+/* Rain */
+.rain {
+    background-color: #6fa8dc; /* Blue, representing rainy weather */
+}
+
+/* Snow */
+.snow {
+    background-color: #dfe4ea; /* Very light gray, representing snow */
+}
+
+/* Mist */
+.mist {
+    background-color: #b3c2c6; /* Gray with a hint of blue, for a misty look */
+}
+
+/* Smoke */
+.smoke {
+    background-color: #767676; /* Medium gray */
+    color: #eaecee; 
+}
+
+/* Haze */
+.haze {
+    background-color: #a5acb1; /* Light gray, representing hazy conditions */
+}
+
+/* Dust */
+.dust {
+    background-color: #b29f91; /* Dusty rose color */
+}
+
+/* Fog */
+.fog {
+    background-color: #c7d0d5; /* Light gray, representing foggy conditions */
+}
+
+/* Sand */
+.sand {
+    background-color: #e4c492; /* Sandy color */
+}
+
+/* Ash */
+.ash {
+    background-color: #8c8c8c; /* Gray for ash */
+}
+
+/* Squall */
+.squall {
+    background-color: #66707e; /* Dark bluish-gray for squalls */
+    color: #eaecee; 
+}
+
+/* Tornado */
+.tornado {
+    background-color: #4e545b; /* Very dark gray for tornado conditions */
+    color: #eaecee; 
+}
+
+/* Clear */
+.clear {
+    background-color: #f9e79f; /* Light yellow, for clear sunny days */
+}
+
+/* Clouds */
+.clouds {
+    background-color: #a9cce3; /* Light blue-gray, representing cloudy conditions */
+}

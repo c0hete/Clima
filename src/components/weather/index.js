@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Details from '../details';
 import Error from '../error';
 import './index.css';
 import { capitalizeFirstLetters } from '../../functions/capitalizeFirstLetters';
@@ -17,7 +16,9 @@ function CurrentWeather({ city }) {
       axios.get(url)
         .then((response) => {
           let weatherClass = '';
+          
           switch (response.data.weather[0].main) {
+
   case 'Thunderstorm':
     weatherClass = 'thunderstorm';
     break;
@@ -48,9 +49,7 @@ function CurrentWeather({ city }) {
   case 'Sand':
     weatherClass = 'sand';
     break;
-  case 'Dust':
-    weatherClass = 'dust';
-    break;
+
   case 'Ash':
     weatherClass = 'ash';
     break;
@@ -86,9 +85,6 @@ const formattedDate = currentDate.toLocaleDateString("es-ES", {
             location: response.data.name,
             temperature: response.data.main.temp,
             description: capitalizeFirstLetters(response.data.weather[0].description), // También aquí
-            humidity: response.data.main.humidity,
-            pressure: response.data.main.pressure,
-            windSpeed: response.data.wind.speed,
             iconUrl: iconUrl,
             date: capitalizedDate, // Fecha capitalizada
             weatherClass: weatherClass // Agrega esta línea
@@ -109,11 +105,6 @@ const formattedDate = currentDate.toLocaleDateString("es-ES", {
           <img src={weather.iconUrl} alt="" className="weather-icon" />
           <p className="weather-details">{weather.temperature}°C</p>
           <p className="weather-description">{weather.description}</p> {/* La descripción también */}
-          <Details 
-            humidity={weather.humidity}
-            pressure={weather.pressure}
-            windSpeed={weather.windSpeed}
-          />
         </>
       )}
     </div>

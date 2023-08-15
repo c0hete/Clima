@@ -1,74 +1,182 @@
-.forecast-wrapper {
+.forecast-container {
+  display: flex; /* Convierte este contenedor en un contenedor flex */
+  overflow-x: auto; /* Permite el desplazamiento horizontal cuando las tarjetas excedan el ancho de la vista */
+  white-space: nowrap; /* Evita que los elementos internos se rompan en varias líneas */
+  scrollbar-width: thin; 
+  scrollbar-color: rgb(0, 208, 255) #89f7fe;
+
+    overflow-y: visible;
+ 
+}
+
+.forecast-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.forecast-container::-webkit-scrollbar-thumb {
+  background-color: rgb(0, 208, 255);
+  border-radius: 4px;
+}
+.cardContainerFore {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    margin: 0 2px;  /* El primer valor es para arriba/abajo y el segundo para izquierda/derecha */
+}
+
+.cardFore {
+  position: relative;
+  width: 220px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(30px);
+  background-color: rgba(142, 144, 183, 0.166);
+  border: 1px solid rgba(255, 255, 255, 0.089);
+  cursor: pointer;
+  overflow: visible;
+}
+
+.date{
+  font-weight: 300;
+  font-size: 2em;
+  letter-spacing: 1.2px;
+  color: rgb(28, 18, 18);
+}
+.city {
+  font-weight: 300;
+  font-size: 3em;
+  letter-spacing: 1.2px;
+  color: white;
+}
+
+.weather {
+  font-weight: 500;
+  font-size: 2.5em;
+  letter-spacing: 1.2px;
+  color: rgb(111, 110, 110);
+}
+
+.temp {
+  font-size: 3.5em;
+  color: rgb(28, 18, 18);
+}
+
+.minmaxContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.min,.max {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0px 20px;
+  gap: 4px;
+}
+
+.max {
+  align-items: flex-start;
+  border-left: 2px solid white;
+}
+
+.maxHeading,.minHeading {
+  font-size: 2.5em;
+  font-weight: 400;
+  color: white;
+}
+
+.maxTemp,.minTemp {
+  font-size: 2.2em;
+  font-weight: 500;
+  color: rgb(90, 89, 89);
+}
+
+.cardContainerFore::before {
+  width: 100px;
+  height: 100px;
+  content: "";
+  position: absolute;
+  background-color: rgb(144, 161, 255);
+  z-index: -1;
+  border-radius: 50%;
+  left: 100px;
+  top: 50px;
+  transition: all 1s;
+  overflow: visible
+}
+
+.cardContainerFore:hover::before {
+  transform: translate(-50px ,50px);
+}
+
+.cardFore, .cardContainerFore {
+  overflow: visible;
+}
+/* Elimina el límite de ancho y los márgenes si los tiene */
+.forecast-wrapper {
+  max-width: none; 
+  margin: 0; 
+  padding: 20px 0; /* conserva el padding vertical si lo deseas */
+  width: 100%; /* asegura que ocupa todo el ancho */
 }
 
 .forecast-arrows {
   display: flex;
-  justify-content: space-between; /* Esto separa los elementos */
-
+  justify-content: space-between;
   position: absolute;
   left: 0;
   right: 0;
   z-index: 1;
-  margin-top: -89px;
-  padding-left: 80px;
-  padding-right: 80px;
+  margin-top: 80px; /* ajustar según la necesidad */
+  padding: 0 20px; /* basado en tus márgenes actuales */
+}
+
+.forecast-arrow svg {
+  stroke: #067eed; /* Un color de tu paleta */
+  transition: stroke 0.3s;
+}
+
+.forecast-arrow:hover svg {
+  stroke: rgb(0, 208, 255); /* Coincidiendo con tu efecto hover */
 }
 
 .forecast-arrow {
-  background: none;
+  background: rgba(255, 255, 255, 0.3); /* Color blanco con 30% de opacidad */
   border: none;
-  font-size: 80px; /* Ajusta según el tamaño deseado */
-  color: #fd7e31; /* Color de las flechas */
+  color: #9EBCD9; 
   cursor: pointer;
-  padding: 10px;
   transition: color 0.3s;
-  margin-top: 0px;
-  padding-bottom: 15px;
+  outline: none; /* esto quita el borde enfocado que algunos navegadores agregan */
+  box-shadow: none; /* asegurándonos de que no haya sombras extra */
+  border-radius: 50%; /* Si quieres que el fondo tenga bordes redondeados */
+  padding: 0px;
+  transform: scale(0.8);
+  width: 3.5%;
 }
 
 .forecast-arrow:hover {
-  color: #b69f1d; /* Color de las flechas al pasar el ratón */
+  color: rgb(0, 208, 255); 
+  background: rgba(255, 255, 255, 0.5); /* Aumentamos un poco la opacidad en hover para un efecto */
 }
 
 .forecast-container {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: auto; /* para que se pueda desplazar si es necesario */
   scrollbar-width: thin;
-  scrollbar-color: #999 #eee;
-  margin-top: 3%;
-  margin-left: 80px;
-  margin-right: 80px;
-  scrollbar-width: thin;
-  scrollbar-color: #fd7e31 #022c43; /* color para Firefox */
+  scrollbar-color: rgb(0, 208, 255) #89f7fe; /* Tomando colores de tu paleta */
 }
 
-.forecast-container::-webkit-scrollbar {
-  width: 20px; /* ancho para Chrome, Safari y Opera */
+/* Ajuste para que el forecast-container ocupe todo el ancho */
+.forecast-container {
+  width: 100%;
 }
 
-.forecast-container::-webkit-scrollbar-thumb {
-  background-color: #fd7e31; /* color del pulgar en Chrome, Safari y Opera */
-}
-
-.forecast-card {
-  flex: 0 0 auto;
-  width: 200px;
-  padding: 15px;
-  margin: 10px;
-  background: #f3f3f3;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  scroll-snap-align: start;
-}
-
-.forecast-card img {
-  width: 50px;
-  height: 50px;
-}
-
-.forecast-card h3 {
-  font-size: 14px;
-}

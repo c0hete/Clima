@@ -1,25 +1,28 @@
-html {
-  font-size: 62.5%;
+@import "~leaflet/dist/leaflet.css";
+
+/* Reset básico */
+html, body, div, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-body {
-  margin: 0;
-  font: 300 11px/1.4 'Helvetica Neue', sans-serif;
+/* Estilos generales */
+html, body {
+  font-size: 62.5%; /* Esto establece 1rem a 10px */
+  height: 100%;
+  width: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
   color: #444;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #022c43;
-  overflow: hidden;
-  display: block;
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); /* Fondo degradado */
+
 }
 
-.dashboard {
-  margin-top: 200px;
-  margin-left: 200px;
-}
 
-@media screen and (max-width: 1200px) {
-  body {
-    overflow: visible;
-  }
-}
+
+

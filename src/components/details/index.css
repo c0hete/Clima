@@ -1,0 +1,150 @@
+.details {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /* Cambio aquí: Ahora son filas, no columnas. */
+    gap: 15px;
+    margin-top: 20px;
+    font-size: 1.2em; /* Haciendo el texto un poco más grande */
+}
+
+.details-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px; /* Más espacio alrededor del contenido */
+    border-radius: 10px;
+}
+
+.details-item p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.details-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px; /* Más espacio entre el título y el dato */
+}
+/* Humedad */
+
+.humidity-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.05); /* Sombreado interno para dar sensación de profundidad */
+    border: 1px solid rgba(0,0,0,0.1); /* Un borde sutil */
+}
+
+.humidity-fill {
+    height: 100%;
+    background: linear-gradient(#6BDD70, #50AA50); /* Gradiente vertical para dar sensación de profundidad */
+    border-radius: 10px 0px 0px 10px;
+    position: relative;
+}
+
+.humidity-fill::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background: rgba(255,255,255,0.2); /* Un brillo sutil */
+    border-radius: 10px 0px 0px 10px; 
+}
+
+.humidity-fill::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #007BFF; /* Azul */
+    border-radius: 50%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    box-shadow: 0 0 5px rgba(0,0,0,0.2); /* Sombreado alrededor de la gota para darle profundidad */
+}
+
+
+
+
+/* Presión */
+.pressure-bar {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #4CAF50, #FFEB3B, #F44336); /* De verde a amarillo a rojo */
+    position: relative;
+    border: 1px solid #000; /* Borde negro alrededor de la barra */
+}
+
+.pressure-marker {
+    position: absolute;
+    height: 100%; 
+    width: 2px; /* Ancho de la aguja/marca */
+    background-color: #000; /* Aguja/marca de color negro */
+    top: 0;
+    transform: translateX(-50%); /* Centra la aguja/marca en la posición correcta */
+}
+
+/* Opcional: Puedes añadir una pequeña transición para suavizar el movimiento de la aguja */
+.pressure-marker {
+    transition: left 0.3s ease;
+}
+
+
+/* Velociad del viento */
+/* Barra de Velocidad del Viento */
+.wind-speed-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    position: relative;
+    margin-top: 20px;  /* Añadido para dar espacio arriba */
+}
+
+.wind-speed-fill {
+    height: 100%;
+    background: linear-gradient(to right, #64B3F4, #C2E59C);
+    width: 50%; /* Este valor debería ser dinámico según la velocidad del viento */
+    animation: windWave 0.8s infinite;  /* Animación de ondulación */
+}
+
+
+/* Flecha indicadora de dirección */
+.direction-arrow {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: black; /* Color de la flecha */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(45deg); /* Este valor debe ser dinámico según la dirección del viento */
+}
+
+/* Iconos de ráfagas de viento */
+
+@keyframes windWave {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.3);
+    }
+}
+
+
+/* todos */
+.humidity-fill, .wind-speed-fill {
+    transition: width 0.3s ease;
+}
+
+.humidity-bar:hover, .wind-speed-bar:hover, .pressure-bar:hover {
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+}
+
+
