@@ -10,6 +10,7 @@ import { CircleLoader } from "react-spinners";
 import { motion } from 'framer-motion';
 import './index.css';
 
+
 function Home() {
   const [city, setCity] = useState('');
   const [hasGeoPermission, setHasGeoPermission] = useState(null);

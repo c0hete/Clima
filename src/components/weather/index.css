@@ -6,8 +6,8 @@
     background-color: rgba(255, 255, 255, 0.9); /* Slight white background for contrast */
     text-align: center; /* Centers the text items */
     width: 100%; /* Adjust this as needed */
-    max-width: 450px;
     margin: 20px auto; /* Horizontally centers the container if it doesn't take full width */
+    height: 85%
 }
 
 /* Adjusting title styles */

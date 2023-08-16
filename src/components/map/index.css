@@ -1,0 +1,15 @@
+/* Map Styles */
+.map-container {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con ligera transparencia */
+    width: 100%; /* Se estirará para llenar el espacio disponible en su contenedor de grilla */
+    max-width: 450px; /* Similar al current-weather-container */
+    margin: 20px auto; /* Centra horizontalmente si no ocupa todo el ancho */
+    position: relative; /* Si necesitas posicionar elementos dentro del map-container */
+    overflow: hidden; /* Esconde cualquier contenido que sobrepase los límites del contenedor (como el mapa) */
+    height: 85%;
+}
+
+/* Puedes agregar estilos adicionales según el contenido dentro de tu componente Map. Por ejemplo, si tienes un título, íconos o descripciones, puedes estilizarlos de manera similar a cómo lo hiciste con el CurrentWeather. */

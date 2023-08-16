@@ -3,25 +3,28 @@ body, html {
   padding: 0;
 }
 .search-container {
-  margin: 0;  /* Asegurar que no haya márgenes adicionales */
-  padding: 0; /* Asegurar que no haya padding adicional */
+  display: flex;
+  justify-content: space-between; 
 }
 
 .home-container {
   display: grid;
   grid-template-rows: auto auto auto auto;  
-  grid-template-columns: auto auto auto; 
+  grid-template-columns: 1fr 1.5fr 1.5fr; /* Cambia auto por 1fr para un tamaño uniforme */
   grid-template-areas: 
     "search search search"
     "details currentweather map"
     "forecast forecast forecast"; 
-  gap: 10px;
-  justify-items: center;
-  align-items: center;
+    row-gap: 20px; /* Espacio entre filas */
+    column-gap: 10px; /* Espacio entre columnas */
+  justify-items: stretch;
+  align-items: stretch; /* Esta propiedad ya está configurada para estirar los elementos para que coincidan con la altura de la celda */
   min-height: 100vh;
   width: 100%;
   margin: 0 auto;
 }
+
+
 
 
 .map-wrap {
