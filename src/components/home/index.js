@@ -31,11 +31,19 @@ function Home() {
         setHumidity(response.data.main.humidity);
         setPressure(response.data.main.pressure);
         setWindSpeed(response.data.wind.speed);
-        setWindDirection(response.data.wind.deg); 
+        setWindDirection(response.data.wind.deg);
+
+        // Extraer latitud y longitud de la respuesta
+        const latitude = response.data.coord.lat;
+        const longitude = response.data.coord.lon;
+
+        // Actualizar el marcador y el centro del mapa
+        setMarkerPosition([latitude, longitude]);
+        setCenter([latitude, longitude]);
     } catch (error) {
         console.error(error);
     }
-  }
+}
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {

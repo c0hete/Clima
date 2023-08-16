@@ -1,7 +1,9 @@
 .card {
   display: flex;
-  height: 70px;
+  height: 50px;
   width: 270px;
+  padding-right: 50px;
+
 }
 
 .card svg {
@@ -24,12 +26,23 @@
   justify-content: center;
   width: 25%;
   color: whitesmoke;
-  font-size: 24px;
+  font-size: 14px;
   text-decoration: none;
-  transition: 0.25s;
+  transition: 0.05s;
   border-radius: 50px;
   
 }
+
+.card .social-link1,
+.card .social-link2,
+.card .social-link3,
+.card .social-link4 {
+    width: 50px;  /* Tamaño del botón */
+    height: 45px; /* Tamaño del botón */
+    font-size: 20px; /* Tamaño del ícono o texto dentro del botón */
+    margin: 0 5px; /* Espacio entre botones */
+}
+
 
 .card svg {
   transform: scale(1);
@@ -42,21 +55,25 @@
   background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
   animation: bounce_613 0.4s linear;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);  /* Sombras */
 }
 
 .card .social-link2:hover {
   background-color: #1a1e22;
   animation: bounce_613 0.4s linear;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);  /* Sombras */
 }
 
 .card .social-link3:hover {
   background-color: #0a66c2;
   animation: bounce_613 0.4s linear;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);  /* Sombras */
 }
 
 .card .social-link4:hover {
   background-color: #5865f2;
   animation: bounce_613 0.4s linear;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);  /* Sombras */
 }
 
 

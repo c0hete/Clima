@@ -18,6 +18,20 @@
   display: flex;
 
 }
+.boton-redondo {
+  display: inline-block;
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.boton-redondo:hover {
+  box-shadow: 5px 5px 7px 0px rgba(0, 0, 0, 0.5);
+}
+
 
 .search-container::after, .search-container::before {
   content: "";
@@ -74,4 +88,33 @@
 
 .search__icon path {
   fill: white;
+}
+
+.search__logo {
+    width: 60px; /* Ajusta según el tamaño deseado */
+    height: auto;
+    margin-right: 10px; /* Espacio entre el logo y el ícono de búsqueda */
+}
+
+.search-container {
+    display: grid;
+    grid-template-areas:
+    "logo input"
+    "icon icon";
+    gap: 10px;
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+.search__logo {
+    grid-area: logo;
+}
+
+.input {
+    grid-area: input;
+}
+
+.search__icon {
+    grid-area: icon;
+    border: none; /* Si no deseas el borde izquierdo */
+    margin: 10px 0; /* Espacio superior e inferior alrededor del ícono */
 }
